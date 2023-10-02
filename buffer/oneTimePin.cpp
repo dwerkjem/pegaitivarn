@@ -1,3 +1,5 @@
+#ifndef __PEGAITIVARN_BUFFER_ONETIMEPIN
+#define __PEGAITIVARN_BUFFER_ONETIMEPIN
 #include <string>
 #include <tuple>
 #include <map>
@@ -34,8 +36,10 @@ class oneTimePine{
        int timeout = (t + (this->_timeout * 60));
        this->_buffer[id] = {out, timeout, 0};
        return out
-   }  
+   };  
 
 
 }
 
+}
+#endif

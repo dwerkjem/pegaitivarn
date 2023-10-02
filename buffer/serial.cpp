@@ -1,3 +1,5 @@
+#ifndef __PEGAITIVARN_BUFFER_SERIAL
+#define __PEGAITIVARN_BUFFER_SERIAL
 #include <atomic>
 #include <iostream>
 #include <thread>
@@ -26,3 +28,4 @@ class Serial{
 }
 
 }
+#endif

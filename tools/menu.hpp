@@ -77,19 +77,34 @@ class Menu {
     void render(){
         for(uint8_t i = 0; this->menu_points.size() > i; i++)
             std::cout <<
-              this->menu_points[i].key <<
+              this->menu_points[i].key[0] <<
               " - " << 
               this->menu_points[i].name <<
               std::endl;
         std::cin >> this->pressed;
         for (uint8_t i = 0; this->menu_points.size() > i; i++)
-            if (this->pressed == this->menu_points[i].key){
-                tHIs->menu_points[i].func();
-                break;
-            }
+            for (uint8_t k = 0; this->menu_points[i].key.size() > k; k++)
+                if (this->pressed == this->menu_points[i].key[k]){
+                    std::cout << "ok" << std::endl;
+                    this->menu_points[i].func();
+                    return;
+                }else{
+                    std::cout << 
+                      this->pressed << 
+                      " != " <<
+                      this->menu_points[i].key[k] <<
+                      " size: " <<
+                      this->pressed <<
+                      " != " <<
+                      this->menu_points[i].key[k].size() <<
+                      std::endl;
+                }
+         return ;
     };
   private:
-    std::vector<Point> menu_points;
+    std::vector<
+      pegaitivarn_menu::Point
+    > menu_points;
     std::string pressed;
 };
 }

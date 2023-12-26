@@ -85,26 +85,33 @@ class Menu {
         for (uint8_t i = 0; this->menu_points.size() > i; i++)
             for (uint8_t k = 0; this->menu_points[i].key.size() > k; k++)
                 if (this->pressed == this->menu_points[i].key[k]){
-                    std::cout << "ok" << std::endl;
                     this->menu_points[i].func();
                     return;
-                }else{
-                    std::cout << 
-                      this->pressed << 
-                      " != " <<
-                      this->menu_points[i].key[k] <<
-                      " size: " <<
-                      this->pressed <<
-                      " != " <<
-                      this->menu_points[i].key[k].size() <<
-                      std::endl;
                 }
          return ;
+    };
+    /**
+     * Do the rendering inside a loop.
+     * We use this as a polymorphic interface.
+     */
+    void loop(){
+        this->do_again = true;
+        while(this->do_again){
+            this->render();
+        }
+    };
+    /**
+     * This just breaks the loop. 
+     */
+    void quit(){
+        this->do_again = false;
     };
   private:
     std::vector<
       pegaitivarn_menu::Point
     > menu_points;
+    bool do_again = true;
+    // last pressed keyword or key
     std::string pressed;
 };
 }

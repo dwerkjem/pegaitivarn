@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include "../../buffer/serial.hpp"
 
 int main(){
@@ -7,7 +8,7 @@ int main(){
     > serial (new pai_buffer::Serial());
     std::cout << serial->current() << std::endl;
     std::cout << serial->get() << std::endl;
-    serial->set(10) <<;
+    serial->set(10);
     std::cout << serial->current() << std::endl;
     std::cout << serial->get() << std::endl;
     return 0;

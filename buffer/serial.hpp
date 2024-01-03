@@ -14,7 +14,7 @@ class Serial{
   public:
     unsigned long long int get(){
         this->_serial++;
-        return (unsigned long long int) this->serial;
+        return (unsigned long long int) this->_serial;
     };
     bool set(
         const unsigned long long int number
@@ -24,8 +24,7 @@ class Serial{
     };
     unsigned long long int current(){
         return (unsigned long long int) this->_serial;
-    }
-}
-
+    };
+};
 }
 #endif

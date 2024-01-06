@@ -8,6 +8,11 @@ struct size_limits {
     uint16_t maximum = 255;
 };
 
+struct number_limits {
+    int32_t minimum = 0; 
+    int32_t maximum = 255;
+};
+
 }
 
 #endif

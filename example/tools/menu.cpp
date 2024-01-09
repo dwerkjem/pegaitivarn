@@ -16,8 +16,8 @@ void println(std::string text) {
 
 int main(){
     std::shared_ptr<
-      pegaitivarn_menu::Menu
-    > menu {new pegaitivarn_menu::Menu()};
+      pai_menu::Menu
+    > menu {new pai_menu::Menu()};
     menu->add(
       [](){
         println("test 1");
@@ -32,7 +32,7 @@ int main(){
       std::vector<std::string> {"2"},
       "test 2"
     );
-    pegaitivarn_menu::Point third = {
+    pai_menu::Point third = {
       [](){
         println("test 3");
       },

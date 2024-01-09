@@ -1,5 +1,6 @@
 #ifndef __PEGAITIVARN_BUFFER_SERIAL
 #define __PEGAITIVARN_BUFFER_SERIAL
+#include <cstdint>
 #include <atomic>
 #include <iostream>
 #include <thread>
@@ -12,18 +13,18 @@ class Serial{
   private:
      std::atomic_ullong _serial = 0;
   public:
-    unsigned long long int get(){
+    uint64_t get(){
         this->_serial++;
-        return (unsigned long long int) this->_serial;
+        return (uint64_t) this->_serial;
     };
     bool set(
-        const unsigned long long int number
+        const uint64_t number
     ){
         this->_serial = number;
         return true;
     };
-    unsigned long long int current(){
-        return (unsigned long long int) this->_serial;
+    uint64_t current(){
+        return (uint64_t) this->_serial;
     };
 };
 }

@@ -34,10 +34,14 @@ example_salted_serial:
 example_onetimepin:
 	${C} ${CFLAGS} onetimepin example/buffer/oneTimePin.cpp 
 
+example_verbose:
+	${C} ${CFLAGS} verbose example/tools/verbose.cpp 
+
 examples: example_memusage example_battery \
  example_cpuusage \
  example_serial example_salted_serial\
  example_onetimepin \
  example_input_string example_input_integer \
+ example_verbose \
  example_console_helper_termios
 

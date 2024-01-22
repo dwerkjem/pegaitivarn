@@ -31,8 +31,8 @@ example_serial:
 example_salted_serial:
 	${C} ${CFLAGS} salted_serial example/buffer/salted_serial.cpp 
 
-example_onetimepin:
-	${C} ${CFLAGS} onetimepin example/buffer/oneTimePin.cpp 
+example_one_time_pin:
+	${C} ${CFLAGS} onetimepin example/buffer/one_time_pin.cpp 
 
 example_verbose:
 	${C} ${CFLAGS} verbose example/tools/verbose.cpp 

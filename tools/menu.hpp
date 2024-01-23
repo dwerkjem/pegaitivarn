@@ -11,7 +11,7 @@
 * The goal is to extend this class not the code part that uses this.
 */
 
-namespace pegaitivarn_menu { 
+namespace pai_menu { 
 struct Point { 
     /** 
      * The function that will called after if the menu point chosen

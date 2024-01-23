@@ -1,41 +1,43 @@
 C = g++
-CFLAGS = -Wall -g -std=c++23 -o 
+CFLAGS = -Wall -Wextra -std=c++23 -o 
+CFLAGS_DEBUG = -g ${CFLAGS}
+CFLAGS_RELASE = -O2 ${CFLAGS} 
 
 example_input_string:
-	${C} ${CFLAGS} input_string example/tools/input_string.cpp 
+	${C} ${CFLAGS_DEBUG} input_string example/tools/input_string.cpp 
 
 example_input_integer:
-	${C} ${CFLAGS} input_integer example/tools/input_integer.cpp 
+	${C} ${CFLAGS_DEBUG} input_integer example/tools/input_integer.cpp 
 
 example_console_helper_termios:
-	${C} ${CFLAGS} console_helper_termios example/tools/console_helper_termios.cpp 
+	${C} ${CFLAGS_DEBUG} console_helper_termios example/tools/console_helper_termios.cpp 
 
 example_random_string:
-	${C} ${CFLAGS} random_string example/tools/random/string.cpp 
+	${C} ${CFLAGS_DEBUG} random_string example/tools/random/string.cpp 
 
 example_random_integer:
-	${C} ${CFLAGS} random_integer example/tools/random/integer.cpp 
+	${C} ${CFLAGS_DEBUG} random_integer example/tools/random/integer.cpp 
 
 example_memusage:
-	${C} ${CFLAGS} memusage example/hwmon/memusage.cpp 
+	${C} ${CFLAGS_DEBUG} memusage example/hwmon/memusage.cpp 
 
 example_battery:
-	${C} ${CFLAGS} battery example/hwmon/battery.cpp 
+	${C} ${CFLAGS_DEBUG} battery example/hwmon/battery.cpp 
 
 example_cpuusage:
-	${C} ${CFLAGS} cpuusage example/hwmon/cpuusage.cpp 
+	${C} ${CFLAGS_DEBUG} cpuusage example/hwmon/cpuusage.cpp 
 
 example_serial:
-	${C} ${CFLAGS} serial example/buffer/serial.cpp 
+	${C} ${CFLAGS_DEBUG} serial example/buffer/serial.cpp 
 
 example_salted_serial:
-	${C} ${CFLAGS} salted_serial example/buffer/salted_serial.cpp 
+	${C} ${CFLAGS_DEBUG} salted_serial example/buffer/salted_serial.cpp 
 
 example_one_time_pin:
-	${C} ${CFLAGS} onetimepin example/buffer/one_time_pin.cpp 
+	${C} ${CFLAGS_DEBUG} onetimepin example/buffer/one_time_pin.cpp 
 
 example_verbose:
-	${C} ${CFLAGS} verbose example/tools/verbose.cpp 
+	${C} ${CFLAGS_DEBUG} verbose example/tools/verbose.cpp 
 
 examples: example_memusage example_battery \
  example_cpuusage \

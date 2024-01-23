@@ -3,7 +3,7 @@
 #include <map>
 #include <fstream>
 
-namespace pegaitivarn_cpuusage { 
+namespace pai_cpuusage { 
 
 double cpu_usage;
 double last_all = 0;
@@ -14,7 +14,7 @@ void update(){
     std::string delim = " ";
     std::vector<double> data;
     int start = 0;
-    int end = 0;
+    size_t end = 0;
     double all = 0;
     std::ifstream file;
     file.open("/proc/stat");

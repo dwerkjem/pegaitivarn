@@ -4,7 +4,7 @@ extern "C" {
 }
 
 
-namespace pegaitivarn_memusage { 
+namespace pai_memusage { 
 float mem_usage;
 struct sysinfo sys_info;
 void update(){

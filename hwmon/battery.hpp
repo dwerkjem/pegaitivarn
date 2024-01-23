@@ -6,7 +6,7 @@
 #include <fstream>
 #include <filesystem>
 
-namespace pegaitivarn_battery { 
+namespace pai_battery { 
 namespace fs = std::filesystem;
 
 class Reader{
@@ -64,7 +64,7 @@ class Reader{
                     this->add(i);
     };
     void refresh(){
-        for (int i{0}; i < this->batteries.size(); i++)
+        for (size_t i{0}; i < this->batteries.size(); i++)
             this->refresh(this->batteries[i]);
     };
     void refresh(int &serial){
@@ -80,7 +80,7 @@ class Reader{
     };
     std::vector<double> getAll(){
         std::vector<double> out;
-        for (int i{0}; i < this->batteries.size(); i++)
+        for (size_t i{0}; i < this->batteries.size(); i++)
             out.push_back(this->charges[this->batteries[i]]);
         return out;
     };

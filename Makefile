@@ -40,7 +40,7 @@ example_verbose:
 examples: example_memusage example_battery \
  example_cpuusage \
  example_serial example_salted_serial\
- example_onetimepin \
+ example_one_time_pin \
  example_input_string example_input_integer \
  example_verbose \
  example_console_helper_termios

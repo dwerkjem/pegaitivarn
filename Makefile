@@ -3,6 +3,9 @@ CFLAGS = -Wall -Wextra -std=c++23 -o
 CFLAGS_DEBUG = -g ${CFLAGS}
 CFLAGS_RELASE = -O2 ${CFLAGS} 
 
+example_time:
+	${C} ${CFLAGS_DEBUG} time example/tools/time.cpp
+
 example_input_string:
 	${C} ${CFLAGS_DEBUG} input_string example/tools/input_string.cpp 
 
@@ -36,14 +39,19 @@ example_salted_serial:
 example_one_time_pin:
 	${C} ${CFLAGS_DEBUG} onetimepin example/buffer/one_time_pin.cpp 
 
+example_config:
+	${C} ${CFLAGS_DEBUG} config example/buffer/config.cpp 
+
 example_verbose:
 	${C} ${CFLAGS_DEBUG} verbose example/tools/verbose.cpp 
 
 examples: example_memusage example_battery \
+ example_time \
  example_cpuusage \
  example_serial example_salted_serial\
  example_one_time_pin \
  example_input_string example_input_integer \
+ example_config \
  example_verbose \
  example_console_helper_termios
 

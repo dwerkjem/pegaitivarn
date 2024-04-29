@@ -47,19 +47,13 @@ example_config:
 example_verbose:
 	${C} ${CFLAGS_DEBUG} -o ${BUILD_DIR}/verbose example/tools/verbose.cpp
 
-examples: example_memusage example_battery \
- example_time \
- example_cpuusage \
- example_serial example_salted_serial\
- example_one_time_pin \
- example_input_string example_input_integer \
- example_config \
- example_verbose \
- example_console_helper_termios
+# Target to build all examples
+all: example_memusage example_battery example_time example_cpuusage example_serial example_salted_serial example_one_time_pin example_input_string example_input_integer example_config example_verbose example_console_helper_termios
+
 
 # Ensure the build directory exists
 ${BUILD_DIR}:
 	mkdir -p ${BUILD_DIR}
 
-# Clean up
+# Add dependency to build directory creation for all targets
 example_time example_input_string example_input_integer example_console_helper_termios example_random_string example_random_integer example_memusage example_battery example_cpuusage example_serial example_salted_serial example_one_time_pin example_config example_verbose: ${BUILD_DIR}
